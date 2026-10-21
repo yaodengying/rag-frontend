@@ -26,3 +26,6 @@ __pycache__/
 *.njsproj
 *.sln
 *.sw?
+
+# WorkBuddy 工作区数据（本地记忆/截图，与源码无关）
+.workbuddy/
