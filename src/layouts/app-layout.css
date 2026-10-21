@@ -1,0 +1,220 @@
+/* 应用外壳：左侧导航 + 顶栏 + 内容区（对齐产品原型） */
+
+:root {
+  --app-primary: #2f6bef;
+  --app-primary-weak: #eaf0ff;
+  --app-bg: #f5f7fa;
+  --app-border: #e8ebf0;
+  --app-sidebar-width: 232px;
+  --app-sidebar-width-collapsed: 64px;
+  --app-topbar-height: 56px;
+}
+
+.app-shell {
+  display: flex;
+  min-height: 100vh;
+  background: var(--app-bg);
+}
+
+/* ---------------- 侧边栏 ---------------- */
+
+.app-sidebar {
+  flex-shrink: 0;
+  width: var(--app-sidebar-width);
+  background: #fff;
+  border-right: 1px solid var(--app-border);
+  display: flex;
+  flex-direction: column;
+  transition: width 0.2s ease;
+  overflow: hidden;
+}
+
+.app-shell--collapsed .app-sidebar {
+  width: var(--app-sidebar-width-collapsed);
+}
+
+.app-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  height: var(--app-topbar-height);
+  box-sizing: border-box;
+  border-bottom: 1px solid var(--app-border);
+  white-space: nowrap;
+}
+
+.app-logo__mark {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #3d76ff, #2453e6);
+  color: #fff;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  min-width: 0;
+}
+
+.app-logo__text strong {
+  font-size: 14px;
+  color: #1f2329;
+}
+
+.app-logo__text small {
+  font-size: 11px;
+  color: #8f959e;
+}
+
+.app-shell--collapsed .app-logo__text {
+  display: none;
+}
+
+.app-nav {
+  padding: 12px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.app-nav__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+  color: #4e5561;
+  font-size: 14px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.app-nav__item:hover {
+  background: #f2f4f8;
+  color: #1f2329;
+}
+
+.app-nav__item--active,
+.app-nav__item--active:hover {
+  background: var(--app-primary-weak);
+  color: var(--app-primary);
+  font-weight: 500;
+}
+
+.app-nav__icon {
+  font-size: 16px;
+  display: inline-flex;
+  justify-content: center;
+  width: 18px;
+}
+
+.app-shell--collapsed .app-nav__item {
+  justify-content: center;
+  padding: 0;
+}
+
+.app-shell--collapsed .app-nav__label {
+  display: none;
+}
+
+/* ---------------- 顶栏 ---------------- */
+
+.app-main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  height: var(--app-topbar-height);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 24px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--app-border);
+}
+
+.app-topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.app-topbar__search {
+  width: 320px;
+  border-radius: 8px;
+  background: #f2f4f8;
+}
+
+.app-topbar__search-icon {
+  color: #8f959e;
+}
+
+.app-topbar__right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-topbar__icon-btn {
+  color: #4e5561;
+  font-size: 16px;
+}
+
+.app-topbar__divider {
+  width: 1px;
+  height: 20px;
+  background: var(--app-border);
+}
+
+.app-topbar__user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  background: none;
+  padding: 4px 6px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.app-topbar__user:hover {
+  background: #f2f4f8;
+}
+
+.app-topbar__avatar {
+  background: var(--app-primary-weak);
+  color: var(--app-primary);
+}
+
+.app-topbar__username {
+  font-size: 14px;
+  color: #1f2329;
+}
+
+/* ---------------- 内容区 ---------------- */
+
+.app-content {
+  flex: 1;
+  padding: 24px;
+  min-width: 0;
+}

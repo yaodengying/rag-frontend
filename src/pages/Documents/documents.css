@@ -1,0 +1,310 @@
+/* 文档管理页 */
+
+.doc-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------------- 上传卡片 ---------------- */
+
+.doc-upload-card {
+  border-radius: 12px;
+}
+
+.doc-upload-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.doc-upload-bar__label {
+  font-size: 13px;
+  color: #8f959e;
+}
+
+.doc-upload-bar__warn {
+  font-size: 13px;
+}
+
+/* ---------------- 拖拽上传区 ---------------- */
+
+.doc-upload {
+  background: #fff;
+  border: 1.5px dashed #b9c6ff !important;
+  border-radius: 12px;
+}
+
+.doc-upload .ant-upload-drag-container {
+  padding: 30px 24px 26px;
+}
+
+.doc-upload__icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: var(--app-primary-weak, #eaf0ff);
+  color: var(--app-primary, #2f6bef);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.doc-upload__title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #1f2329;
+  margin-bottom: 6px;
+}
+
+.doc-upload__hint {
+  font-size: 13px;
+  color: #8f959e;
+  margin-bottom: 16px;
+}
+
+.doc-upload__btn {
+  min-width: 120px;
+}
+
+/* ---------------- 上传队列 ---------------- */
+
+.doc-queue {
+  margin-top: 16px;
+  border: 1px solid var(--app-border, #e8ebf0);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.doc-queue__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px 8px 14px;
+  background: #f7f9fc;
+  border-bottom: 1px solid var(--app-border, #e8ebf0);
+}
+
+.doc-queue__title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #1f2329;
+}
+
+.doc-queue__title small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #8f959e;
+}
+
+.doc-queue__list {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.doc-queue__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px 12px 14px;
+  border-bottom: 1px solid #f2f4f8;
+}
+
+.doc-queue__item:last-child {
+  border-bottom: none;
+}
+
+.doc-queue__item--error {
+  background: #fff5f5;
+}
+
+.doc-queue__icon {
+  margin-top: 3px;
+  color: #8f959e;
+}
+
+.doc-queue__meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.doc-queue__top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.doc-queue__name {
+  font-size: 13px;
+  color: #1f2329;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.doc-queue__percent {
+  flex-shrink: 0;
+  font-size: 12px;
+  color: #8f959e;
+  font-variant-numeric: tabular-nums;
+}
+
+.doc-queue__bottom {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.doc-queue__size {
+  font-size: 12px;
+  color: #8f959e;
+}
+
+.doc-queue__error {
+  font-size: 12px;
+  color: #d4380d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ---------------- 文档表格 ---------------- */
+
+.doc-table-card {
+  border-radius: 12px;
+}
+
+.doc-table-title {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 15px;
+}
+
+.doc-table-title small {
+  font-size: 12px;
+  font-weight: 400;
+  color: #8f959e;
+}
+
+.doc-table-toolbar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.doc-kb-select {
+  width: 200px;
+}
+
+.doc-status-select {
+  width: 130px;
+}
+
+.doc-search {
+  width: 200px;
+  border-radius: 8px;
+  background: #f2f4f8;
+}
+
+.doc-search-icon {
+  color: #8f959e;
+}
+
+.doc-filename {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  color: #1f2329;
+}
+
+.doc-filename > .anticon {
+  color: #8f959e;
+}
+
+.doc-filename__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.doc-type-tag {
+  flex-shrink: 0;
+  margin-inline-end: 0;
+  background: #f2f4f8;
+  border-color: var(--app-border, #e8ebf0);
+  color: #4e5561;
+  font-weight: 500;
+}
+
+.doc-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.doc-status__error {
+  font-size: 12px;
+  color: #d4380d;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.doc-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* ---------------- 详情抽屉 ---------------- */
+
+.doc-drawer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.doc-drawer__meta {
+  margin-bottom: 4px;
+}
+
+.doc-drawer__field {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 13px;
+  color: #1f2329;
+}
+
+.doc-drawer__label {
+  flex-shrink: 0;
+  width: 76px;
+  color: #8f959e;
+}
+
+.doc-drawer__mono {
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 12px;
+  word-break: break-all;
+}
+
+.doc-drawer__error {
+  margin-bottom: 0 !important;
+}
+
+.doc-drawer__section {
+  margin: 8px 0 0 !important;
+}

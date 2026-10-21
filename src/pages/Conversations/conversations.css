@@ -1,0 +1,161 @@
+/* 对话历史页 */
+
+.conv-page {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.conv-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.conv-title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 600;
+  color: #1f2329;
+}
+
+.conv-subtitle {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #8f959e;
+}
+
+.conv-head__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.conv-search {
+  width: 240px;
+  border-radius: 8px;
+  background: #f2f4f8;
+}
+
+.conv-search-icon {
+  color: #8f959e;
+}
+
+.conv-loading {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.conv-empty-card {
+  border-style: dashed;
+}
+
+.conv-empty {
+  text-align: center;
+  color: #8f959e;
+  font-size: 13px;
+  padding: 24px 0;
+}
+
+/* 日期分组 */
+
+.conv-group__date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #646a73;
+  margin-bottom: 10px;
+}
+
+.conv-group__date .anticon {
+  color: #8f959e;
+}
+
+.conv-group__cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 14px;
+}
+
+/* 会话卡片 */
+
+.conv-card {
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  position: relative;
+}
+
+.conv-card:hover {
+  border-color: var(--app-primary, #2f6bef);
+  box-shadow: 0 4px 16px rgba(47, 107, 239, 0.1);
+}
+
+.conv-card__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.conv-card__icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--app-primary-weak, #eaf0ff);
+  color: var(--app-primary, #2f6bef);
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.conv-card__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1f2329;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.conv-card__desc {
+  margin-top: 8px;
+  font-size: 12px;
+  color: #8f959e;
+}
+
+.conv-card__footer {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.conv-card__count {
+  font-size: 12px;
+  color: #646a73;
+}
+
+.conv-card__more {
+  font-size: 12px;
+  color: var(--app-primary, #2f6bef);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.conv-card__delete {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.conv-card:hover .conv-card__delete {
+  opacity: 1;
+}

@@ -1,0 +1,141 @@
+/* 知识库管理页（视觉对齐产品原型：浅色圆角卡片 + 轻量状态徽标） */
+
+.kb-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ---------- 统计卡片 ---------- */
+
+.kb-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.kb-stat-card__label {
+  font-size: 13px;
+  color: #646a73;
+}
+
+.kb-stat-card__value {
+  font-size: 26px;
+  font-weight: 700;
+  color: #1f2329;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+
+.kb-stat-card__hint {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+  font-size: 12px;
+  color: #8f959e;
+}
+
+.kb-stat-card__hint-icon {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  color: #a1a7b0;
+}
+
+/* ---------- 表格卡片 ---------- */
+
+.kb-table-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.kb-search {
+  width: 256px; /* 原型 w-64 */
+  border-radius: 8px;
+  background: #f2f4f8;
+}
+
+.kb-search-icon {
+  color: #8f959e;
+}
+
+.kb-name-link {
+  padding: 0;
+  font-weight: 500;
+}
+
+.kb-cell-muted {
+  color: #b8bec7;
+}
+
+.kb-col-time .anticon {
+  margin-right: 5px;
+  color: #8f959e;
+}
+
+.kb-time {
+  color: #4e5561;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.kb-time .anticon {
+  margin-right: 6px;
+  color: #8f959e;
+}
+
+/* ---------- 库级状态徽标（由文档状态派生） ---------- */
+
+.kb-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.kb-status::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: currentcolor;
+}
+
+.kb-status--ready {
+  color: #1f7a3d;
+  background: #e8f5ec;
+}
+
+.kb-status--processing {
+  color: #1d5fd1;
+  background: #e9f0fd;
+}
+
+.kb-status--failed {
+  color: #c2342b;
+  background: #fceceb;
+}
+
+.kb-status--empty,
+.kb-status--unknown {
+  color: #6b7280;
+  background: #f2f3f5;
+}
+
+.kb-status--unknown::before {
+  display: none;
+}
+
+/* ---------- 响应式 ---------- */
+
+@media (max-width: 1100px) {
+  .kb-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
